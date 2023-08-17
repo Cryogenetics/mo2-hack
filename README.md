@@ -28,7 +28,7 @@ The console contains output for any errors it occurs, ex: no files found, no url
 
 
 ***
-###Behaviors:
+### Behaviors:
 
 Multiple download links: Files page opened
 Adult content: Printed to console / opened (relies on ``openAdultContent``'s value)
