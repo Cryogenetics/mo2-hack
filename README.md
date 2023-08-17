@@ -7,6 +7,8 @@ It isn't perfect, and is more of a hack to automatically start downloads.
 Any page with more than one mod organizer download, or no mod organizer downloads will have to be navigated and selected manually.
 
 im just lazy and figured at least one other person would like a simple way to get all URLs open and maybe remove some navigation.
+
+very glitchy/finicky
 ***
 ## Warning:
 i was lazy and just spam open a bunch of browser windows, some autodownloading, and others just to the mod page.
