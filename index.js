@@ -33,7 +33,7 @@ const JSONdata = Array.from(CSVToJSON(csvData)).map(modEntry => {
         return
     }
 
-    modEntry.URL = modEntry.URL.trim() + "&tab=files"
+    modEntry.URL = modEntry.URL.trim() + "?tab=files"
     return modEntry
     }).filter(mod => mod !== undefined);
 
@@ -56,6 +56,10 @@ JSONdata.forEach(mod => {
         if(e.message === "No file found") return failedMods[mod.Name] = {reason: e.message, mod: mod.Name, url: mod.URL};
         if(e.message==="Adult Content" && !openAdultContent) return failedMods[mod.Name] = {reason: e.message, mod: mod.Name, url: mod.URL};
         // upon failure just open the URL in the browser
+
+        //debug all errors
+        // failedMods[mod.Name] = {reason: e.message, mod: mod.Name, url: mod.URL}
+
         cp.exec(`start "" "${mod.URL}"`);
     }));
 
