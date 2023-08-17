@@ -21,9 +21,13 @@ The console contains output for any errors it occurs, ex: no files found, no url
 ***
 ## How to use
 1. Get a CSV export you want to import the download links into MO2
+   
 2. hope there aren't situations i didn't plan for
+
 3. place csv in modlist.csv
+
 4. run ```node .```
+
 5. cry as a bunch of pages are opened.
 
 
@@ -31,8 +35,11 @@ The console contains output for any errors it occurs, ex: no files found, no url
 ### Behaviors:
 
 Multiple download links: Files page opened
+
 Adult content: Printed to console / opened (relies on ``openAdultContent``'s value)
+
 No files: Output to console
+
 ***
 
 I made this at 4 am in about 2 hours, so ignore its ugliness, and any sleep-deprived code, and the lack of comments.
