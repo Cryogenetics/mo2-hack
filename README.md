@@ -17,18 +17,15 @@ There is no error checking, and if you have a bunch of tabs open, it will open a
 
 I am not responsible for any damage this causes, use at own risk.
 
-The console contains output for any errors it occurs, ex: no files found, no url associated to the mod. adult content is outputted to console, to change this behavior, change the variable ```openAdultContent``` to true on line 6
+The console contains output for any errors it occurs, ex: no files found, no url associated to the mod. adult content is outputted to console, to change this behavior, change the variable ```openAdultContent``` to true in ``config.json``
 ***
 ## How to use
 1. Get a CSV export you want to import the download links into MO2
-   
-2. hope there aren't situations i didn't plan for
-
+2. if you want to start downloads in NXM rather than browser, input ur sid_develop cookie's value from nexusmods.
 3. place csv in modlist.csv
-
 4. run ```node .```
-
-5. cry as a bunch of pages are opened.
+5. hope there aren't situations i didn't plan for
+6. cry as a bunch of pages are opened.
 
 
 ***
@@ -36,7 +33,7 @@ The console contains output for any errors it occurs, ex: no files found, no url
 
 Multiple download links: Files page opened
 
-Adult content: Printed to console / opened (relies on ``openAdultContent``'s value)
+Adult content: Printed to console / opened (relies on ``openAdultContent``'s value in config.json)
 
 No files: Output to console
 

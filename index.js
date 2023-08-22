@@ -3,7 +3,9 @@ const {CSVToJSON} = require("./util/CSVToJson");
 const {getNMMFiles} = require("./util/getNMMLink");
 const cp = require("child_process");
 
-const openAdultContent = false;
+
+const {openAdultContent, sid_develop} = require("./config.json");
+const {getNXMData} = require("./util/getNXMLink");
 
 // Dictionary to rewrite keys to nicer format
 const dict = {
@@ -46,11 +48,15 @@ JSONdata.forEach(mod => {
     }
     seenBefore.set(mod.Name, mod);
     // continue on error, add mod to failedMods
-    promiseArray.push(getNMMFiles(mod.URL).then((data) => {
+    promiseArray.push(getNMMFiles(mod.URL).then(async (data) => {
         if(data.length === 0) throw new Error("No file found");
         if(data.length !== 1) throw new Error("More than one file found");
-        const parsedURL = data[0].match(/href="(.*)"/)[1];
+        let parsedURL = data[0].match(/href="(.*)"/)[1];
         if(parsedURL.includes("ModRequirementsPopUp")) throw new Error("ModRequirementsPopUp");
+        if(sid_develop !== "sid_develop") parsedURL = await getNXMData(parsedURL, sid_develop);
+
+
+
         cp.exec(`start "" "${parsedURL}"`);
     }).catch((e) => {
         if(e.message === "No file found") return failedMods[mod.Name] = {reason: e.message, mod: mod.Name, url: mod.URL};
