@@ -13,6 +13,7 @@ const dict = {
     "#Mod_Name": "Name",
     "#Nexus_ID": "ID",
     "#Mod_Nexus_URL\r": "URL",
+    "#Mod_Nexus_URL": "URL",
 }
 
 const seenBefore = new Map();
