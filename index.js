@@ -25,7 +25,7 @@ const csvData = fs.readFileSync("modlist.csv", "utf-8");
 const JSONdata = Array.from(CSVToJSON(csvData)).map(modEntry => {
     Object.entries(modEntry).map(([key, value]) => {
         if (dict[key]) {
-            modEntry[dict[key]] = value.trim();
+            modEntry[dict[key]] = value.trim().replaceAll('"', "");
             delete modEntry[key];
         }
         return modEntry
