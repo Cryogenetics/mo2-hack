@@ -1,3 +1,8 @@
+## Deprecated
+
+ Made a web version that can be found [here](https://github.com/Cryogenetics/mo2-importer-web/)
+
+
 ## MO2-Hack
 
 This is a simple js  application i made because i wanted to download a youtuber's modlist,
